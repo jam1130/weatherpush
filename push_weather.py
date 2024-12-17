@@ -6,7 +6,7 @@ import time
 # -------------------------- 配置部分 -------------------------- #
 # 和风天气 API 配置
 HEFENG_API_KEY = "4da911dbf9534137838473f66fcbd2fd"  # 替换为你的和风天气 API Key
-CITY = "101040800"  # 北京的城市代码，可根据和风城市列表替换为其他城市代码
+CITY = "101040800"  # 重庆的城市代码，可根据和风城市列表替换为其他城市代码
 
 # Server酱配置
 SCKEY = "SCT265435TMjOl6e15qVEhfLh5KY9AkUW5"  # 替换为你的 Server酱 SendKey
