@@ -1,1 +1,33 @@
+name: Weather Push Script  
 
+# 定义触发条件：每天定时运行  
+on:  
+  schedule:  
+    - cron: "0 8 * * *"  # 每天 UTC 时间早上 8 点运行（可调整为你的时间）  
+
+# 定义工作任务  
+jobs:  
+  run-weatherpush:  
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 系统作为环境  
+
+    steps:  
+    # 1. 检出代码  
+    - name: Checkout code  
+      uses: actions/checkout@v3  
+
+    # 2. 设置 Python 环境  
+    - name: Set up Python 3  
+      uses: actions/setup-python@v4  
+      with:  
+        python-version: "3.9"  # 指定 Python 版本（根据你的需求调整）  
+
+    # 3. 安装依赖  
+    - name: Install dependencies  
+      run: |  
+        python -m pip install --upgrade pip  # 更新 pip  
+        pip install -r requirements.txt      # 安装依赖（如存在 requirements.txt 文件）  
+
+    # 4. 运行脚本  
+    - name: Run weatherpush script  
+      run: |  
+        python weatherpush.py  # 执行你的主脚本
